@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout | Tiny Trend House</title>
+
+<style>
+    body {
+        background-color: #FFF5F5;
+        font-family: Arial;
+    }
+
+    .container {
+        width: 400px;
+        margin: auto;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+
+    .card-details {
+        display: none;
+        margin-top: 10px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        background-color: darkblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+</style>
+
+<script>
+function toggleCardDetails() {
+    let card = document.getElementById("card");
+    let details = document.getElementById("cardDetails");
+
+    if (card.checked) {
+        details.style.display = "block";
+    } else {
+        details.style.display = "none";
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Secure Checkout</h2>
+
+<form>
+
+<fieldset>
+    <legend>Payment & Shipping</legend>
+
+    <p><b>Payment Method:</b></p>
+
+    <input type="radio" id="card" name="payment" onclick="toggleCardDetails()">
+    <label for="card">Credit Card</label><br>
+
+    <input type="radio" id="cash" name="payment" onclick="toggleCardDetails()">
+    <label for="cash">Cash on Delivery</label>
+
+    <!-- Credit Card Details -->
+    <div id="cardDetails" class="card-details">
+        <p><b>Credit Card Details:</b></p>
+
+        Card Holder Name:<br>
+        <input type="text" placeholder="Enter name on card"><br><br>
+
+        Card Number:<br>
+        <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX"><br><br>
+
+        Amount (Rs.):<br>
+        <input type="number" placeholder="Enter amount"><br><br>
+    </div>
+
+</fieldset>
+
+<br>
+
+<input type="checkbox" required> I agree to the terms and conditions<br><br>
+
+<input type="submit" value="Submit Order" class="btn">
+<input type="reset" class="btn">
+
+</form>
+
+<br>
+
+<a href="contact.html">Contact Us</a>
+
+</div>
+
+</body>
+</html>
